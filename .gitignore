@@ -1,0 +1,81 @@
+# =============================================================================
+# Visual Studio / WDK / Windows kernel-mode driver project
+# =============================================================================
+
+# Build outputs
+*.sys
+*.pdb
+*.obj
+*.exe
+*.dll
+*.lib
+*.exp
+*.ilk
+*.pch
+
+# VS / MSBuild user-specific
+.vs/
+*.user
+*.suo
+*.userprefs
+*.sdf
+*.cachefile
+*.VC.db
+*.opensdf
+*.sln.docstates
+
+# VS / MSBuild directories
+Debug/
+Release/
+x64/
+x86/
+ARM/
+ARM64/
+[Bb]in/
+[Oo]bj/
+ipch/
+[Ll]og/
+[Oo]ut/
+[Tt]humbs.db
+
+# IntelliSense / browser files
+*.aps
+*.bsc
+*.sbr
+*.tmp_proj
+*.cache
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.coverage
+*.coveragexml
+
+# Misc
+*.log
+*.tlog
+*.lastbuildstate
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude Code workspace data (do not upload)
+.claude/
+
+# Plan files (do not upload)
+*.plan.md
+
+# Local secrets / tokens (just in case)
+.env
+.env.local
+*.tok

@@ -117,6 +117,13 @@ PVOID EptHOOK(ULONG_PTR FunAddr, PVOID FakeFun)
 	hidePage->OriginalFunAddr = FunAddr;
 	hidePage->OriginalFunHeadCode = (ULONG_PTR)OriginalFunHeadCode;
 
+	if (!EnsureEptPteForPhyAddr(hidePage->RealPagePhyAddr)) {
+		kfree(hidePage);
+		kfree(OriginalFunHeadCode);
+		kfree((PVOID)fakePage);
+		return NULL;
+	}
+
 	InsertTailList(&HidePageEntry.list, &hidePage->list);
 
 	// VMCALL into HOST to flip the EPT PTE.

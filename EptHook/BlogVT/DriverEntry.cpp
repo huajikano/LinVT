@@ -63,6 +63,7 @@ EXTERN_C VOID UnloadVT(
 }
 
 
+EXTERN_C VOID UninstallReadMemoryHook();
 EXTERN_C VOID DriverUnload(PDRIVER_OBJECT driver)
 {
 	UNREFERENCED_PARAMETER(driver);
@@ -77,10 +78,7 @@ EXTERN_C VOID DriverUnload(PDRIVER_OBJECT driver)
 
 	//��ʱ��һ��VT�˳����
 	NdisStallExecution(50);
-	if (EptMem) {
-		kfree(EptMem);
-		EptMem = 0;
-	}
+	DestroyEpt();
 
 	Log("����ж��");
 }

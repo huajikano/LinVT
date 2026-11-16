@@ -69,10 +69,7 @@ EXTERN_C VOID DriverUnload(PDRIVER_OBJECT driver)
 
 	//延时等一下VT退出完毕
 	NdisStallExecution(50);
-	if (EptMem) {
-		kfree(EptMem);
-		EptMem = 0;
-	}
+	DestroyEpt();
 
 	Log("驱动卸载");
 }

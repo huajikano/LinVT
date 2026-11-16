@@ -8,6 +8,8 @@ EXTERN_C Eptp EptP;
 EXTERN_C PCHAR EptMem;
 EXTERN_C BOOLEAN UseEpt;
 EXTERN_C BOOLEAN InitEpt();
+EXTERN_C VOID DestroyEpt();
+EXTERN_C BOOLEAN EnsureEptPteForPhyAddr(ULONG_PTR addr);
 EXTERN_C EptCommonEntry* GetPteByPhyAddr(ULONG_PTR addr);
 
 class TinyVT
